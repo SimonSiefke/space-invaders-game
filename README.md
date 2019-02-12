@@ -1,22 +1,3 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/17200f96-72cf-43ad-a4f2-e08351aae0b2/deploy-status)](https://app.netlify.com/sites/skspaceinvaders/deploys)
+
 # space-invaders-game
-
-> My primo Nuxt.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn run dev
-
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
-# generate static project
-$ yarn run generate
-```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
