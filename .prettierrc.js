@@ -1,1 +1,4 @@
-module.exports = require('prettier-config-bitworkers')
+module.exports = {
+  semi: false,
+  singleQuote: true,
+}
