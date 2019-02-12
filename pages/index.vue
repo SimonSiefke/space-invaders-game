@@ -17,12 +17,12 @@
         class="bullet"
       />
     </div>
-    <pre class="output" />
   </section>
 </template>
 
 <script>
 import Vue from 'vue'
+import _ from 'lodash'
 /* eslint-disable no-restricted-globals */
 export default {
   data() {
@@ -51,12 +51,10 @@ export default {
     }
     const ball = this.$refs.ball
     const garden = document.querySelector('.garden')
-    const output = document.querySelector('.output')
     const maxY = garden.clientHeight - ball.clientHeight
 
     const handleOrientation = event => {
       let y = event.gamma // In degree in the range [-90,90]
-      output.innerHTML = `gamma: ${y}\n`
 
       y += 90
 
@@ -66,7 +64,7 @@ export default {
     }
 
     window.addEventListener('deviceorientation', handleOrientation)
-    window.addEventListener('click', this.shoot)
+    window.addEventListener('click', _.throttle(this.shoot, 700))
     this.loop()
   },
   methods: {
