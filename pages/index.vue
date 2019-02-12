@@ -11,17 +11,13 @@
           height: `${ball.size}px`
         }"
       />
-      <div
+
+      <Bullet
         v-for="bullet in bullets"
         :key="bullet.id"
-        :style="{
-          left: `${bullet.x}px`,
-          top: `${bullet.y}px`,
-          background: 'purple',
-          width: `${bullet.size}px`,
-          height: `${bullet.size}px`
-        }"
-        class="bullet"
+        :left="bullet.x"
+        :top="bullet.y"
+        :size="bullet.size"
       />
     </div>
   </section>
@@ -29,9 +25,13 @@
 
 <script>
 import Vue from 'vue'
+import Bullet from '../components/Bullet.vue'
 import _ from 'lodash'
 /* eslint-disable no-restricted-globals */
 export default {
+  components: {
+    Bullet
+  },
   data() {
     return {
       ball: {
@@ -43,7 +43,8 @@ export default {
         {
           x: 10,
           y: 10,
-          id: 0
+          id: 0,
+          size: 4
         }
       ]
     }
