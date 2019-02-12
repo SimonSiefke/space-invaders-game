@@ -3,6 +3,7 @@
     <div class="garden">
       <div class="ball" />
     </div>
+    <pre class="output" />
   </section>
 </template>
 
