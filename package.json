@@ -20,6 +20,7 @@
     "eslint": "^5.13.0",
     "eslint-config-bitworkers": "^1.15.0",
     "eslint-loader": "^2.1.2",
+    "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-vue": "^5.1.0",
     "nodemon": "^1.18.10",
     "prettier": "^1.16.4",
