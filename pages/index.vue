@@ -4,7 +4,12 @@
       <div
         ref="ball"
         class="ball"
-        :style="{ left: `${ball.x}px`, top: `${ball.y}px` }"
+        :style="{
+          left: `${ball.x}px`,
+          top: `${ball.y}px`,
+          width: `${ball.size}px`,
+          height: `${ball.size}px`
+        }"
       />
       <div
         v-for="bullet in bullets"
@@ -12,7 +17,9 @@
         :style="{
           left: `${bullet.x}px`,
           top: `${bullet.y}px`,
-          background: 'purple'
+          background: 'purple',
+          width: `${bullet.size}px`,
+          height: `${bullet.size}px`
         }"
         class="bullet"
       />
@@ -29,7 +36,8 @@ export default {
     return {
       ball: {
         x: 90,
-        y: 10
+        y: 10,
+        size: 20
       },
       bullets: [
         {
@@ -75,10 +83,12 @@ export default {
       requestAnimationFrame(this.loop)
     },
     shoot() {
+      const bulletSize = 4
       this.bullets.push({
-        x: this.ball.x,
-        y: this.ball.y,
-        id: Math.random()
+        x: this.ball.x + this.ball.size / 2 - bulletSize / 2,
+        y: this.ball.y - bulletSize,
+        id: Math.random(),
+        size: bulletSize
       })
     }
   }
@@ -109,13 +119,9 @@ export default {
 .ball {
   position: absolute;
   top: 90px;
-  width: 20px;
-  height: 20px;
   background: green;
 }
 .bullet {
-  width: 3px;
-  height: 3px;
   background: red;
 }
 </style>
